@@ -18,6 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor greenColor];
+    UIView * view = [[UIView alloc]init];
+    view.frame = CGRectMake(100, 300, 100, 100);
+    view.backgroundColor = [UIColor orangeColor];
+    view.layer.cornerRadius = 50.0;
+    [UIView animateWithDuration:1 animations:^{
+        view.center = CGPointMake(150, 100);
+    }completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
+    view.layer.masksToBounds = YES;
+    [self.view addSubview:view];
 
 }
 
