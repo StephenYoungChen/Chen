@@ -17,12 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor greenColor];
-   [UIView animateWithDuration:2 animations:^{
-       self.view.backgroundColor = [UIColor yellowColor];
-   } completion:^(BOOL finished) {
-       self.view.backgroundColor = [UIColor orangeColor];
-   }];
+    self.view.backgroundColor = [UIColor purpleColor];
+    UILabel *label = [[UILabel alloc]init];
+    label.frame = CGRectMake(100, 100, 100, 50);
+    label.text = @"今天星期五";
+    [UIView animateWithDuration:1.0 animations:^{
+        label.transform = CGAffineTransformScale(label.transform, 2, 2);
+    } completion:^(BOOL finished) {
+        label.transform = CGAffineTransformScale(label.transform, 0.5, 0.5);
+    }];
+    [self.view addSubview:label];
 
 }
 
